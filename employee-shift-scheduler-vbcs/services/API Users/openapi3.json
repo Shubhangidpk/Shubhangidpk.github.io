@@ -1,0 +1,23 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Reqres In",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/Users"
+        }
+    ],
+    "paths": {
+        "/api/user/": {
+            "get": {
+                "operationId": "getApiUser2",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    }
+}

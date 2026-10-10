@@ -1,0 +1,16 @@
+{
+  "component-dependencies": {
+    "oj-sample": {
+      "version": "8.0.0",
+      "components": {
+        "export-data": "8.0.0"
+      }
+    },
+    "oj-dyn": {
+      "version": "2610.1.0",
+      "components": {
+        "form": "2610.1.0"
+      }
+    }
+  }
+}

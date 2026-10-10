@@ -1,0 +1,26 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Create TechnicianShift"></oj-vb-fragment-param>
+  <template slot="actions">
+    <oj-button label="Cancel" on-oj-action="[[$listeners.backButtonClicked]]" chroming="borderless"></oj-button>
+    <oj-button label="Save" on-oj-action="[[$listeners.saveButtonClicked]]" chroming="callToAction"
+      disabled="[[ $variables.createTechnicianShiftChainInProgress ]]"></oj-button>
+  </template>
+</oj-vb-fragment>
+
+<div class="oj-flex">
+
+  <oj-validation-group id="validation-group" class="oj-flex-item oj-sm-12 oj-md-12">
+    <oj-form-layout>
+      <oj-input-text value="{{ $variables.technicianShift.employeeName }}" label-hint="Employee Name"></oj-input-text>
+      <oj-select-single value="{{ $variables.technicianShift.time1}}" label-hint="Timing"
+        data="[[ $variables.scheduleTimingTimeSDP ]]" item-text="time1"></oj-select-single>
+      <oj-select-single value="{{ $variables.technicianShift.team }}" label-hint="Team" data="[[ $variables.teamSDP ]]"
+        item-text="team"></oj-select-single>
+      <oj-select-single label-hint="Shift" data="[[ $variables.scheduleTimingShiftSDP ]]" item-text="shift"
+        value="{{ $variables.technicianShift.currentShift }}"></oj-select-single>
+        <oj-input-date label-hint="Date" value="{{$variables.technicianShift.date1}}"></oj-input-date>
+    </oj-form-layout>
+  </oj-validation-group>
+</div>
+
+

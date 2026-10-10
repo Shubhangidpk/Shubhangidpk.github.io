@@ -1,0 +1,112 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "a9528c9c-7bd2-48a0-83a2-b9a8ea2bf845",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "86625f67-6dcf-4417-98fb-986b7fc28cfa",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "4c203cdb-300e-49a0-897d-1add42dc76f5",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "d37d1cfe-f41b-41ab-b48e-1b97bed98de5",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "795614a9-b659-4ea3-a235-743bf6551954",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+{
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "71f05da7-4580-4657-babb-5ee9dbe5f9b0",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "number",
+            "name": "age",
+            "oid": "61f9ab6e-2031-400a-914a-d00e09a5dd95",
+            "displayLabel": "age"
+        }        ,
+        {
+            "type": "string",
+            "name": "firstName",
+            "oid": "9c77d564-1ff1-42f2-826a-33e2bd5d9d5f",
+            "displayLabel": "firstName"
+        }        ,
+        {
+            "type": "string",
+            "name": "lastName",
+            "oid": "c125b811-b475-4cf0-961f-95bff17bbdf3",
+            "displayLabel": "last"
+        }        ,
+        {
+            "type": "number",
+            "name": "contactNumber",
+            "oid": "19dde570-ef05-45fe-a022-39dcc1cd7cd5",
+            "displayLabel": "contactNumber"
+        }        ,
+        {
+            "type": "string",
+            "name": "emailAddress",
+            "oid": "6970b836-3e4f-44f7-840c-0e8d2ca9e6f3",
+            "displayLabel": "emailAddress",
+            "format": "email"
+        }        ,
+        {
+            "type": "string",
+            "name": "qualification",
+            "oid": "59a27751-6de4-4cb7-8fbb-3f88ba52f4c7",
+            "displayLabel": "qualification"
+        }        ,
+{
+            "type": "string",
+            "name": "fullName",
+            "oid": "5886825c-f662-41c0-b6c9-c191f16f6b4d",
+            "displayLabel": "fullName"
+        },
+        {
+            "type": "string",
+            "name": "salaryRange",
+            "oid": "9cb45639-849a-431f-89c3-1018ac248745",
+            "displayLabel": "salary range"
+        }        ,
+        {
+            "type": "string",
+            "name": "salary",
+            "oid": "0ed6112a-ab2a-4dd9-8f16-b99547a345eb",
+            "displayLabel": "salary"
+        }
+    ],
+    "name": "Employee",
+    "oid": "f6fe57a0-101d-4bc5-95b9-b69ec94bb550",
+    "displayLabel": "Employee"
+}

@@ -1,0 +1,26 @@
+{
+  "component-dependencies": {
+    "oj-sample": {
+      "version": "8.0.0",
+      "components": {
+        "utils": "8.0.0",
+        "export-data": "8.0.0"
+      }
+    },
+    "oj-dyn": {
+      "version": "2610.1.0",
+      "components": {
+        "form": "2610.1.0",
+        "bind-field": "2610.1.0"
+      }
+    },
+    "oj-dynamic": {
+      "version": "2610.1.0",
+      "components": {
+        "shared": "2610.1.0",
+        "utils": "2610.1.0",
+        "providers": "2610.1.0"
+      }
+    }
+  }
+}

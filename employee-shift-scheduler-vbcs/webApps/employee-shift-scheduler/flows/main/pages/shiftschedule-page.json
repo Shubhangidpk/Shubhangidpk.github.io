@@ -1,0 +1,263 @@
+{
+  "title": "shiftschedule",
+  "description": "",
+  "variables": {
+    "ScheduleTimingSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ScheduleTiming",
+        "responseType": "getall_ScheduleTiming",
+        "itemsPath": "items",
+        "keyAttributes": "time1"
+      }
+    },
+    "ScheduleTimingShiftSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ScheduleTiming",
+        "responseType": "getall_ScheduleShiftTiming",
+        "itemsPath": "items",
+        "keyAttributes": "shift"
+      }
+    },
+    "selectedEmployee": {
+      "type": {
+        "currentShift": "string",
+        "date1": "string",
+        "employeeName": "string",
+        "id": "string",
+        "team": "string",
+        "time1": "string"
+      }
+    },
+    "TeamSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Team",
+        "responseType": "getall_Team",
+        "itemsPath": "items",
+        "keyAttributes": "team"
+      }
+    },
+    "technicianShiftListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_TechnicianShift",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallTechnicianShiftResponse2"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getall_ScheduleShiftTiming": {
+      "endpoint": "getall_ScheduleTiming",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_ScheduleTiming": {
+      "endpoint": "getall_ScheduleTiming",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_Team": {
+      "endpoint": "getall_Team",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallTechnicianShiftResponse": {
+      "endpoint": "getall_TechnicianShift",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallTechnicianShiftResponse2": {
+      "endpoint": "getall_TechnicianShift",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getall_ScheduleShiftTiming": {
+      "items": [
+        {
+          "shift": "string"
+        }
+      ]
+    },
+    "getall_ScheduleTiming": {
+      "items": [
+        {
+          "shift": "string",
+          "time1": "string"
+        }
+      ]
+    },
+    "getall_Team": {
+      "items": [
+        {
+          "team": "string"
+        }
+      ]
+    },
+    "getallTechnicianShiftResponse": {
+      "items": [
+        {
+          "action": "string",
+          "currentShift": "string",
+          "date1": "string",
+          "employeeName": "string",
+          "id": "number",
+          "team": "string",
+          "time1": "string"
+        }
+      ]
+    },
+    "getallTechnicianShiftResponse2": {
+      "items": [
+        {
+          "currentShift": "string",
+          "date1": "string",
+          "employeeName": "string",
+          "id": "number",
+          "team": "string",
+          "time1": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "updateShiftSchedule",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "backToMngrHome",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "navigateToEmpManagement",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "createTechnicianShiftButtonClicked": {
+      "chains": [
+        {
+          "chain": "navigateToCreateTechnicianShiftChain"
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "IconClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "updateShiftFromTime",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}",
+            "firstSelectedRow": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+   }
+  }
+}

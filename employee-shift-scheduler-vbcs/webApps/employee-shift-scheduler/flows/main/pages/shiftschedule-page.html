@@ -1,0 +1,97 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Shift Schedule"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-padding-2x">
+  <oj-button label='Back' class="oj-flex-item oj-sm-4 oj-md-3" chroming="callToAction"
+    on-oj-action="[[$listeners.buttonAction3]]"></oj-button></div>
+    
+    <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button label='Manage Employee' class="oj-sm" chroming="callToAction"
+      on-oj-action="[[$listeners.buttonAction4]]"></oj-button></div>
+      <div class="oj-flex-item oj-sm-padding-2x">
+        <oj-button label='Add Employee' class="oj-sm" chroming="callToAction"
+          on-oj-action="[[$listeners.buttonAction5]]">
+        </oj-button></div>
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+    columns='[{"headerText":"Employee Id","field":"id"},{"headerText":"Employee Name","field":"employeeName"},{"headerText":"Team","field":"team"},{"headerText":"Current Shift","field":"currentShift"},{"headerText":"Time","field":"time1"},{"headerText":"Date","field":"date1"},{"headerText":"Actions","template":"customTemplate"}]'
+    data="[[$variables.technicianShiftListSDP]]" on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]"
+    selection-mode.row="single" id="oj-table-1395937771-1">
+
+    <template slot="customTemplate">
+      <span
+        class="oj-ux-ico-edit"
+        slot="t"
+        on-click="[[$listeners.iconClick]]">
+      </span>
+    </template>
+
+  </oj-table>
+</div>
+
+<oj-dialog id="oj-dialog-1395937771-1" dialog-title="Edit Employee Schedule" resize-behavior="resizable">
+
+  <!-- Dialog Content -->
+  <div class="oj-sm-padding-4x">
+
+    <h4 class="oj-typography-heading-sm">
+      <oj-bind-text value="[[$variables.selectedEmployee.employeeName]]">
+      </oj-bind-text>
+    </h4>
+
+    <!-- Date -->
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Date</strong>
+      <div>
+        <oj-input-date label-hint="Date" value="{{$variables.selectedEmployee.date1}}" required="true" class="oj-flex-item oj-sm-12 oj-md-6">
+        </oj-input-date>
+      </div>
+    </div>
+
+    <!-- Time -->
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Time</strong>
+      <div>
+        <oj-select-single label-hint="Select Time" value="{{$variables.selectedEmployee.time1}}"
+          data="[[$variables.ScheduleTimingSDP]]" required="true" class="oj-flex-item oj-sm-12 oj-md-6"
+          item-text="time1" on-value-item-changed="[[$listeners.selectValueItem]]">
+        </oj-select-single>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Team</strong>
+      <div>
+        <oj-select-single label-hint="Select Team" value="{{$variables.selectedEmployee.team}}"
+          data="[[$variables.TeamSDP]]" required="true" class="oj-flex-item oj-sm-12 oj-md-6" item-text="team">
+        </oj-select-single>
+      </div>
+    </div>
+
+    <!-- Current Shift -->
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Current Shift</strong>
+      <div>
+        <oj-select-single label-hint="Select Shift" value="{{$variables.selectedEmployee.currentShift}}"
+          data="[[$variables.ScheduleTimingShiftSDP]]" item-text="shift" required="true"
+          class="oj-flex-item oj-sm-12 oj-md-6" disabled="true">
+        </oj-select-single>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dialog Footer -->
+  <div slot="footer">
+    <oj-button label="Save" on-oj-action="[[$listeners.buttonAction]]">
+    </oj-button>
+
+    <oj-button label="Cancel" chroming="outlined" on-oj-action="[[$listeners.buttonAction2]]">
+    </oj-button>
+  </div>
+
+</oj-dialog>

@@ -1,0 +1,5 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,name,quantity,description
+1,2026-09-03T04:51:58,2026-09-03T04:51:58.015,OEG.Student,OEG.Student,Laptop,1,One Dell Laptop
+2,2026-09-03T04:52:18,2026-09-03T04:52:18.005,OEG.Student,OEG.Student,Mouse,2,One wired and wireless
+3,2026-09-03T04:52:36,2026-09-03T04:52:36.006,OEG.Student,OEG.Student,Keyboard,1,Wired Keyboard
+4,2026-09-03T04:52:54,2026-09-03T04:52:54.005,OEG.Student,OEG.Student,Headphone,1,One dell headset issued

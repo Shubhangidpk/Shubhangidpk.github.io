@@ -1,0 +1,129 @@
+{
+  "title": "technicianhome",
+  "description": "",
+  "variables": {
+    "overtimeRequestSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_OverTimeRequest",
+        "responseType": "getall_OverTimeRequest",
+        "itemsPath": "items",
+        "filterCriterion": {
+          "op": "$eq",
+          "attribute": "employeeId",
+          "value": "{{ $application.variables.loggedInUser.employeeId }}"
+        }
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getall_OverTimeRequest": {
+      "endpoint": "getall_OverTimeRequest",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getall_OverTimeRequest": {
+      "items": [
+        {
+          "employeeId": "string",
+          "employeeName": "string",
+          "overtimeDate": "string",
+          "overtimeHours": "number",
+          "reason": "string",
+          "status": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "navigateToOvertimeRequest",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain3",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain4",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "vbEnterListener",
+          "parameters": {}
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-highlight-text": {
+        "path": "ojs/ojhighlighttext"
+      }
+
+   }
+  }
+}

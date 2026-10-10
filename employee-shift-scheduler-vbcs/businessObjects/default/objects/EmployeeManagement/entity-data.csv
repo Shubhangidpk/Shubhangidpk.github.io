@@ -1,0 +1,11 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,employeeId,employeeName,team,status,date1
+1,2026-10-08T05:01:15,2026-10-08T05:59:52,notify@oracleerpguide.com,notify@oracleerpguide.com,1,John Doe,A,Inactive,
+2,2026-10-08T05:03:43,2026-10-08T06:01:18,notify@oracleerpguide.com,notify@oracleerpguide.com,2,Mike Brown,A,Inactive,
+3,2026-10-08T05:04:02,2026-10-08T05:04:02.004,notify@oracleerpguide.com,notify@oracleerpguide.com,3,David Lee,B,Inactive,
+4,2026-10-08T05:04:19,2026-10-08T05:04:19.004,notify@oracleerpguide.com,notify@oracleerpguide.com,4,Mark Circ,C,Active,
+5,2026-10-08T05:04:39,2026-10-08T05:04:39.004,notify@oracleerpguide.com,notify@oracleerpguide.com,5,Eren Katie,A,Inactive,
+6,2026-10-08T05:04:56,2026-10-08T05:04:56.004,notify@oracleerpguide.com,notify@oracleerpguide.com,6,Sudha Kiran,B,Active,
+7,2026-10-08T05:05:18,2026-10-08T05:05:18.01,notify@oracleerpguide.com,notify@oracleerpguide.com,7,Sean Paul,C,Inactive,
+8,2026-10-08T05:05:45,2026-10-08T05:05:45.005,notify@oracleerpguide.com,notify@oracleerpguide.com,8,Rita Banerjee,B,Active,
+9,2026-10-08T05:06:08,2026-10-08T05:06:08.003,notify@oracleerpguide.com,notify@oracleerpguide.com,9,John Paul,C,Inactive,
+10,2026-10-08T05:06:27,2026-10-08T05:06:27.004,notify@oracleerpguide.com,notify@oracleerpguide.com,10,Risha Kumari,B,Active,

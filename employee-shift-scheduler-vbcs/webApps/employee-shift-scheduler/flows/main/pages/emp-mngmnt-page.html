@@ -1,0 +1,240 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Employee Management">
+</oj-vb-fragment>
+
+<template slot="actions">
+</template>
+</oj-vb-fragment>
+
+
+<!-- Employee Management -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-4">
+    <oj-button label="Back" class="oj-button-sm" chroming="callToAction" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+  </div>
+</div>
+<div class="oj-flex oj-sm-padding-6x">
+
+  <!-- Employee Search -->
+  <div class="oj-flex-item oj-sm-12 oj-md-4"></div>
+<div class="oj-flex-item oj-sm-12 oj-md-5 oj-sm-padding-2x-bottom">
+
+  <oj-select-single label-hint="Search Employee" "="" data="[[ $variables.employeeManagementListSDP2 ]]"
+    item-text="[[$functions.getEmployeeText]]" value="{{ $variables.selectedEmployee }}"
+    on-value-item-changed="[[$listeners.selectValueItem2]]">
+  <template slot="itemTemplate">
+    <oj-label><oj-bind-text value=" [[ $current.data.employeeName]]"></oj-bind-text></oj-label>
+  </template>
+
+</oj-select-single>
+
+</div>
+  </div>
+
+
+  <!-- Employee Table -->
+  <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12" columns='[
+      {"headerText":"Employee Id","field":"employeeId"},
+      {"headerText":"Employee Name","field":"employeeName"},
+      {"headerText":"Team","field":"team"},
+      {"headerText":"Status","field":"status"},
+      {"headerText":"Actions","template":"customTemplate"}
+    ]'
+    on-first-selected-row-changed="[[$listeners.tableFirstSelectedRow]]" selection-mode.row="single"
+    data="[[ $variables.employeeManagementListSDP ]]">
+
+    <!-- Actions Column -->
+    <template slot="customTemplate">
+
+      <div class="oj-flex oj-sm-align-items-center">
+
+        <!-- Edit -->
+        <oj-button display="icons" chroming="borderless" label="Edit Employee"
+          disabled="[[$current.row.status === 'Inactive']]" class="oj-sm-margin-1x-end"
+          on-oj-action="[[$listeners.iconClick]]">
+
+          <span
+            slot="startIcon"
+            class="oj-ux-ico-edit">
+          </span>
+
+        </oj-button>
+
+
+        <!-- Inactivate -->
+        <oj-button display="icons" chroming="borderless" label="Delete Employee"
+          disabled="[[$current.row.status === 'Inactive']]" on-oj-action="[[$listeners.buttonAction5]]">
+
+          <span
+            slot="startIcon"
+            class="oj-ux-ico-delete-all">
+          </span>
+
+        </oj-button>
+
+      </div>
+
+    </template>
+
+  </oj-table>
+
+</div>
+
+
+<!-- Inactivate Employee Dialog -->
+<oj-dialog dialog-title="Inactivate Employee" id="oj-dialog-737495226-2" class="oj-dialog-width-md">
+
+  <div class="oj-sm-padding-5x">
+
+    <div class="oj-sm-margin-4x-bottom">
+
+      <h4 class="oj-typography-heading-sm">
+        Confirm Employee Inactivation
+      </h4>
+
+      <p class="oj-typography-body-md">
+        Are you sure you want to inactivate this employee?
+      </p>
+
+      <p class="oj-typography-body-sm">
+        This action will mark the employee as inactive in the workforce records.
+      </p>
+
+    </div>
+
+
+    <!-- Employee Information -->
+    <div class="oj-flex">
+
+      <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Employee ID" value="{{ $variables.selectedEmpDetails.employeeId }}" readonly="true">
+        </oj-input-text>
+
+      </div>
+
+
+      <div class="oj-flex-item oj-sm-6 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Employee Name" value="{{ $variables.selectedEmpDetails.employeeName }}"
+          readonly="true">
+        </oj-input-text>
+
+      </div>
+
+    </div>
+
+
+    <div class="oj-flex">
+
+      <div class="oj-flex-item oj-sm-5 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Team" value="{{ $variables.selectedEmpDetails.team }}" readonly="true">
+        </oj-input-text>
+
+      </div>
+
+
+      <div class="oj-flex-item oj-sm-5 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Status" value="{{ $variables.selectedEmpDetails.status }}" readonly="true">
+        </oj-input-text>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Dialog Footer -->
+  <div slot="footer">
+
+    <oj-button label="Cancel" chroming="outlined" on-oj-action="[[$listeners.buttonAction4]]">
+    </oj-button>
+
+    <oj-button label="Delete Employee" chroming="callToAction" on-oj-action="[[$listeners.buttonAction3]]">
+    </oj-button>
+
+  </div>
+
+</oj-dialog>
+
+
+<!-- Edit Employee Dialog -->
+<oj-dialog dialog-title="Edit Employee" id="oj-dialog-737495226-1" class="oj-dialog-width-md">
+
+  <div class="oj-sm-padding-5x">
+
+    <div class="oj-sm-margin-4x-bottom">
+
+      <h4 class="oj-typography-heading-sm">
+        Employee Details
+      </h4>
+
+      <p class="oj-typography-body-sm">
+        Update the employee's team and employment status.
+      </p>
+
+    </div>
+
+
+    <!-- Employee Information -->
+    <div class="oj-flex">
+
+      <div class="oj-flex-item oj-sm-12 oj-md-6 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Employee ID" value="{{ $variables.selectedEmpDetails.employeeId }}" readonly="true">
+        </oj-input-text>
+
+      </div>
+
+
+      <div class="oj-flex-item oj-sm-12 oj-md-6 oj-sm-padding-2x">
+
+        <oj-input-text label-hint="Employee Name" value="{{ $variables.selectedEmpDetails.employeeName }}"
+          readonly="true">
+        </oj-input-text>
+
+      </div>
+
+    </div>
+
+
+    <!-- Editable Information -->
+    <div class="oj-flex">
+
+      <div class="oj-flex-item oj-sm-12 oj-md-5 oj-sm-padding-2x">
+
+        <oj-select-single label-hint="Team" value="{{ $variables.selectedEmpDetails.team }}"
+          data="[[ $variables.teamSDP ]]" item-text="team">
+        </oj-select-single>
+
+      </div>
+
+
+      <div class="oj-flex-item oj-sm-12 oj-md-5 oj-sm-padding-2x">
+
+        <oj-select-single label-hint="Status" value="{{ $variables.selectedEmpDetails.status }}"
+          data="[[ $variables.statusSDP ]]" item-text="status">
+        </oj-select-single>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Dialog Footer -->
+  <div slot="footer">
+
+    <oj-button label="Cancel" chroming="outlined" on-oj-action="[[$listeners.buttonAction2]]">
+    </oj-button>
+
+    <oj-button label="Save Changes" chroming="callToAction" on-oj-action="[[$listeners.buttonAction]]">
+    </oj-button>
+
+  </div>
+
+</oj-dialog>

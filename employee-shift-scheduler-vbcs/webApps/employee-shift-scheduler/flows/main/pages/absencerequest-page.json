@@ -1,0 +1,81 @@
+{
+  "title": "absencerequest",
+  "description": "",
+  "variables": {
+    "absenceDate": {
+      "type": "string"
+    },
+    "absenceType": {
+      "type": "string"
+    },
+    "absenceTypeSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_AbsenceType",
+        "responseType": "getall_AbsenceType",
+        "itemsPath": "items"
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getall_AbsenceType": {
+      "endpoint": "getall_AbsenceType",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getall_AbsenceType": {
+      "items": [
+        {
+          "leaveTypes": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "submitAbsenceRequest",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+   }
+  }
+}

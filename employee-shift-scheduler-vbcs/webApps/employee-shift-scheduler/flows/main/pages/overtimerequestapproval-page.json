@@ -1,0 +1,76 @@
+{
+  "title": "overtimerequestapproval",
+  "description": "",
+  "variables": {
+    "overtimeRequests": {
+      "type": [
+        {
+          "employeeId": "string",
+          "employeeName": "string",
+          "id": "string",
+          "overtimeDate": "string",
+          "overtimeHours": "string",
+          "reason": "string",
+          "status": "string"
+        }
+      ]
+    },
+    "selectedOvertimeReq": {
+      "type": {
+        "employeeId": "string",
+        "employeeName": "string",
+        "id": "string",
+        "overtimeDate": "string",
+        "overtimeHours": "string",
+        "reason": "string",
+        "status": "string"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "overtimeRequest": "{{$current.data}}",
+            "overtimeRequestId": "{{$current.data.id}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "vbEnterListener"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      }
+   }
+  }
+}

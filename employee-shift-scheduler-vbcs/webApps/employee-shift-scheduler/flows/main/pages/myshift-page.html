@@ -1,0 +1,210 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="My Shift">
+</oj-vb-fragment>
+
+<template slot="actions">
+</template>
+</oj-vb-fragment>
+
+<oj-button label='Back to Home' class="oj-flex-item oj-sm-6 oj-md-4" chroming="callToAction"
+    on-oj-action="[[$listeners.buttonAction3]]"></oj-button>
+
+<!-- PAGE HEADER -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+
+    <h2 class="oj-typography-heading-lg">
+      My Shift
+    </h2>
+
+    <p class="oj-typography-body-lg oj-text-color-secondary">
+      View your assigned work schedule and shift details.
+    </p>
+
+  </div>
+</div>
+
+
+<!-- TODAY'S SHIFT -->
+<div class="oj-flex oj-sm-padding-horizontal-6x">
+
+  <div class="oj-flex-item oj-sm-12">
+
+    <h3 class="oj-typography-heading-md">
+      Today's Shift
+    </h3>
+
+  </div>
+
+</div>
+
+
+<div class="oj-flex oj-sm-padding-horizontal-6x">
+
+  <oj-action-card class="oj-flex-item oj-sm-12 oj-md-6">
+
+    <div class="oj-sm-padding-4x">
+
+      <h5 class="oj-typography-heading-sm">
+        Morning Shift
+        </h4>
+
+        <div class="oj-sm-margin-2x-bottom">
+          <strong>Time</strong>
+          <div>06:00 AM - 02:00 PM</div>
+        </div>
+
+        <div class="oj-sm-margin-2x-bottom">
+          <strong>Team</strong>
+          <div>Team A</div>
+        </div>
+
+        <div>
+          <strong>Area</strong>
+          <div>Equipment Support</div>
+        </div>
+
+    </div>
+
+  </oj-action-card>
+
+</div>
+
+
+<!-- UPCOMING SHIFTS -->
+<div class="oj-flex oj-sm-padding-6x">
+
+  <div class="oj-flex-item oj-sm-12">
+
+    <h3 class="oj-typography-heading-md">
+      Upcoming Shifts
+    </h3>
+
+  </div>
+
+</div>
+
+
+<!-- SHIFT LIST -->
+<div class="oj-flex oj-sm-flex-wrap-wrap oj-sm-padding-horizontal-6x">
+
+  <oj-bind-for-each data="[[ $variables.shiftData ]]">
+
+    <template>
+
+      <oj-action-card class="oj-flex-item oj-sm-12 oj-md-6 oj-lg-3">
+
+        <div class="oj-sm-padding-3x">
+
+          <!-- DATE -->
+          <h4 class="oj-typography-heading-sm">
+            <oj-bind-text value="[[$current.data.date]]">
+            </oj-bind-text>
+          </h4>
+
+          <span class="oj-badge oj-badge-info"> Status: 
+  Upcoming
+</span>
+
+          <!-- SHIFT -->
+          <div class="oj-sm-margin-2x-bottom">
+
+            <strong>Shift</strong>
+
+            <div>
+              <oj-bind-text value="[[$current.data.shift]]">
+              </oj-bind-text>
+            </div>
+
+          </div>
+
+
+          <!-- TIME -->
+          <div class="oj-sm-margin-2x-bottom">
+
+            <strong>Time</strong>
+
+            <div>
+              <oj-bind-text value="[[$current.data.time]]">
+              </oj-bind-text>
+            </div>
+
+          </div>
+
+
+          <!-- TEAM -->
+          <div>
+
+            <strong>Team</strong>
+
+            <div>
+              <oj-bind-text value="[[$current.data.team]]">
+              </oj-bind-text>
+            </div>
+
+          </div>
+
+
+
+          <div class="oj-sm-margin-4x-top">
+
+            <oj-button chroming="outlined" on-oj-action="[[$listeners.buttonAction]]">
+              View Details
+            </oj-button>
+
+          </div>
+        </div>
+      </oj-action-card>
+
+    </template>
+
+  </oj-bind-for-each>
+
+  <oj-dialog
+  id="shiftDetailsDialog"
+  dialog-title="Shift Details">
+
+  <div class="oj-sm-padding-4x">
+
+    <h4 class="oj-typography-heading-sm">
+      <oj-bind-text
+        value="[[$variables.selectedShift.shift]]">
+      </oj-bind-text>
+    </h4>
+
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Date</strong>
+      <div>
+        <oj-bind-text
+          value="[[ $variables.selectedShift.date ]]">
+        </oj-bind-text>
+      </div>
+    </div>
+
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Time</strong>
+      <div>
+        <oj-bind-text
+          value="[[$variables.selectedShift.time]]">
+        </oj-bind-text>
+      </div>
+    </div>
+
+    <div class="oj-sm-margin-3x-bottom">
+      <strong>Team</strong>
+      <div>
+        <oj-bind-text
+          value="[[$variables.selectedShift.team]]">
+        </oj-bind-text>
+      </div>
+    </div>
+
+    <div class="oj-sm-margin-3x-bottom">
+  <oj-button label="Close" chroming="callToAction" on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+    </div>
+
+  </div>
+
+</oj-dialog>
+
+</div>

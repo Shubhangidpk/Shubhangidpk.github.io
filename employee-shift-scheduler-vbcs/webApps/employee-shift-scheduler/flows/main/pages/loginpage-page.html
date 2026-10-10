@@ -1,0 +1,28 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="main"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+<div class="oj-flex">
+  <h5 class="oj-header oj-flex-item oj-sm-12 oj-md-12">Employee Shift &amp; Workforce Portal</h5>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-2">
+    <oj-bind-text value="Workforce & Shift Operations"></oj-bind-text>
+  </div>
+</div>
+<div class="oj-flex">
+  <oj-input-text label-hint="Employee ID" class="oj-flex-item oj-sm-12 oj-md-6" placeholder="Enter Employee ID"
+    required="true" value="{{ $variables.employeeId }}"></oj-input-text>
+</div>
+<div class="oj-flex">
+  <oj-input-password label-hint="Password" class="oj-flex-item oj-sm-12 oj-md-6" placeholder="Enter Password"
+    required="true" value="{{ $variables.password }}"></oj-input-password>
+</div>
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-2">
+    <oj-button label="Sign In" chroming="callToAction" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+  </div>
+</div>
+
+

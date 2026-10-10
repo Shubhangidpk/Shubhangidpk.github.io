@@ -1,0 +1,125 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Manager Home"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<!-- Main Page Title -->
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-8"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-4">
+    <oj-button label='Logout' chroming="callToAction" on-oj-action="[[$listeners.buttonAction4]]"></oj-button>
+  </div>
+</div>
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h4>Employee Shift &amp; Workforce Portal</h4>
+  </div>
+</div>
+
+<!-- Welcome Message -->
+<div class="oj-flex oj-sm-padding-6x-start oj-sm-padding-6x-end oj-sm-padding-2x-bottom">
+  <div class="oj-flex-item oj-sm-12">
+    <oj-bind-text value="[[ 'Welcome, ' + $application.variables.loggedInUser.name + '. Here’s your current workforce overview.' ]]">
+</oj-bind-text>
+  </div>
+</div>
+
+<!-- Navigation Menu -->
+<div class="oj-flex oj-sm-padding-horizontal-4x oj-sm-padding-bottom-4x">
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="solid" label="Home" class="oj-button-sm"></oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="solid" label="Shift Schedule" on-oj-action="[[$listeners.buttonAction3]]" class="oj-button-sm"></oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="solid" label="Overtime Requests" on-oj-action="[[$listeners.buttonAction]]"
+      class="oj-button-sm"></oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="solid" label="Absence Requests" on-oj-action="[[$listeners.buttonAction2]]"
+      class="oj-button-sm"></oj-button>
+  </div>
+
+</div>
+
+<!-- Dashboard Cards -->
+<div class="oj-flex oj-sm-flex-wrap-wrap oj-sm-padding-6x-start oj-sm-padding-6x-end">
+
+  <!-- Pending Overtime -->
+  <oj-action-card class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h5>PENDING OVERTIME</h5>
+      <div class="oj-typography-heading-md">
+        <oj-bind-text value="[[$application.variables.pendingOvertimeCountMngr]]"></oj-bind-text>
+      </div>
+      <div class="oj-typography-body-md">
+        Request awaiting approval
+      </div>
+    </div>
+  </oj-action-card>
+
+  <!-- Pending Absence -->
+  <oj-action-card class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h5>PENDING ABSENCE</h5>
+      <div class="oj-typography-heading-md">
+        <oj-bind-text value="[[$application.variables.pendingAbsenceCountMngr]]"></oj-bind-text>
+      </div>
+      <div class="oj-typography-body-md">
+        Request awaiting approval
+      </div>
+    </div>
+  </oj-action-card>
+
+  <!-- Team Members -->
+  <oj-action-card class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h5>TEAM MEMBERS</h5>
+      <div class="oj-typography-heading-md">
+         <oj-bind-text value="[[$application.variables.activeTechnician]]"></oj-bind-text>
+      </div>
+      <div class="oj-typography-body-md">
+        Active technicians
+      </div>
+    </div>
+  </oj-action-card>
+</div>
+
+<!-- Workforce Overview -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h4>Workforce Overview</h4>
+    <p>
+      Review technician availability, shift assignments, and pending requests.
+    </p>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="oj-flex oj-sm-flex-wrap-wrap oj-sm-padding-horizontal-6x">
+
+  <div class="oj-flex-item oj-sm-12 oj-md-4 oj-sm-padding-2x">
+    <oj-button class="oj-button-sm" label="Review Overtime Requests" chroming="callToAction"
+      on-oj-action="[[$listeners.buttonAction5]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-12 oj-md-4 oj-sm-padding-2x">
+    <oj-button class="oj-button-sm" label="Review Absence Requests" chroming="callToAction"
+      on-oj-action="[[$listeners.buttonAction6]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-12 oj-md-4 oj-sm-padding-2x">
+    <oj-button class="oj-button-sm" label="View Shift Schedule" chroming="callToAction"
+      on-oj-action="[[$listeners.buttonAction7]]">
+    </oj-button>
+  </div>
+
+</div>

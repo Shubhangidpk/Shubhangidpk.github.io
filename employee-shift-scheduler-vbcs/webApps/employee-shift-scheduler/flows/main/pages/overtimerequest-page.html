@@ -1,0 +1,67 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param
+    name="title"
+    value="Overtime Request">
+  </oj-vb-fragment-param>
+
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<div>
+  <oj-button label='Back' class="oj-flex-item oj-sm-2 oj-md-2 oj-button-sm" chroming="callToAction"
+    on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+</div>
+
+<!-- Page Title -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h2>Raise Overtime Request</h2>
+  </div>
+</div>
+
+<!-- Request Form -->
+<div class="oj-flex oj-sm-padding-6x-start oj-sm-padding-6x-end">
+
+  <div class="oj-flex-item oj-sm-12 oj-md-8">
+
+    <!-- Date -->
+    <oj-form-layout
+      label-edge="top"
+      columns="1">
+
+      <oj-input-date
+        label-hint="Overtime Date" value="{{ $variables.overtimeDate }}">
+      </oj-input-date>
+
+      <!-- Hours -->
+      <oj-input-number
+        label-hint="Overtime Hours"
+        min="1"
+        max="12" value="{{ $variables.overtimeHours }}">
+      </oj-input-number>
+
+      <!-- Reason -->
+      <oj-text-area
+        label-hint="Reason for Overtime"
+        rows="5" value="{{ $variables.reason }}">
+      </oj-text-area>
+
+    </oj-form-layout>
+
+    <!-- Buttons -->
+    <div class="oj-flex oj-sm-padding-4x-top">
+
+      <div class="oj-flex-item oj-sm-padding-2x">
+        <oj-button label="Submit Request" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+      </div>
+
+      <div class="oj-flex-item oj-sm-padding-2x">
+        <oj-button label="Cancel"></oj-button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

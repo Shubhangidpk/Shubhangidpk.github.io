@@ -1,0 +1,87 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "a2beba12-1a16-49da-b58c-6f1683d14f4f",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "377d08c0-0a91-4e2e-8b0f-20120683ff78",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "47ab5133-3ec5-4a54-9134-0519979e1727",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "3d1ab8d6-0bbf-40fb-9afb-8d04bf049d87",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "167eb304-6417-4f1d-bece-36c787c2995c",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "2291f3b6-b9e3-4e96-99a3-de494392b093",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "employeeId",
+            "oid": "513717d6-ca56-4cc3-b94f-dfb665cca159",
+            "displayLabel": "Employee Id"
+        },
+        {
+            "type": "string",
+            "name": "employeeName",
+            "oid": "47fc4a30-63c3-4bf4-8830-24a3b8392e20",
+            "displayLabel": "Employee Name"
+        },
+        {
+            "type": "string",
+            "name": "team",
+            "oid": "86226228-5b77-4d7c-9225-5e18eda4210e",
+            "displayLabel": "Team"
+        },
+{
+            "type": "string",
+            "name": "status",
+            "oid": "bfbb2881-4601-4be4-a688-2f3a0bdd5941",
+            "displayLabel": "Status"
+        },
+        {
+            "type": "string",
+            "name": "date1",
+            "oid": "9917d6d7-0f35-410a-8a61-5760c7607bce",
+            "displayLabel": "Date"
+        }
+    ],
+    "name": "EmployeeManagement",
+    "oid": "aed437d3-68ea-4a74-a879-0088136db4ce",
+    "displayLabel": "Employee Management"
+}

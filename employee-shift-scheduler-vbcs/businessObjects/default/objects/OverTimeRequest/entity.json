@@ -1,0 +1,93 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "9ecd746c-e554-4c40-83d3-1c8451a090d1",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "113f66cf-66ec-4693-8823-97499af3a3d9",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "238eb024-45f9-4314-b36b-23de98b60aec",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "574f8d03-278c-48d3-b026-b18cb2970dad",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "2f776f79-ec6e-4f22-8ed0-dd20cb302cd4",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "8e7327fa-4285-43cc-ad16-9699fc8e2b2f",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "employeeId",
+            "oid": "3eb12845-e9a5-4844-828b-bede40ee55a2",
+            "displayLabel": "employeeId"
+        },
+        {
+            "type": "string",
+            "name": "employeeName",
+            "oid": "7b500964-77e8-4069-a7b9-9cc3d4ded395",
+            "displayLabel": "employeeName"
+        },
+        {
+            "type": "datetime",
+            "name": "overtimeDate",
+            "oid": "7317dd56-9cf6-43db-a11a-bc3a5b0dc109",
+            "displayLabel": "overtimeDate"
+        },
+        {
+            "type": "number",
+            "name": "overtimeHours",
+            "oid": "74f5ade4-f920-4d2c-8bee-1f0262e99b56",
+            "displayLabel": "overtimeHours"
+        },
+        {
+            "type": "string",
+            "name": "reason",
+            "oid": "4d0eb2eb-050e-4d60-8842-098d08de5c2e",
+            "displayLabel": "reason"
+        },
+        {
+            "type": "string",
+            "name": "status",
+            "oid": "39d8c020-55ea-4452-8277-3af60dd66a8e",
+            "displayLabel": "status"
+        }
+    ],
+    "name": "OverTimeRequest",
+    "oid": "8a7d90aa-32df-4275-a727-b3cca6d3bffe",
+    "displayLabel": "Over Time Request"
+}

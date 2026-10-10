@@ -1,0 +1,86 @@
+{
+  "title": "absencerequestapproval",
+  "description": "",
+  "variables": {
+    "absenceRequests": {
+      "type": [
+        {
+          "absenceDate": "string",
+          "absenceType": "string",
+          "employeeId": "string",
+          "employeeName": "string",
+          "id": "string",
+          "reason": "string",
+          "status": "string"
+        }
+      ]
+    },
+    "selectedAbsenceRequest": {
+      "type": {
+        "absenceDate": "string",
+        "absenceReason": "string",
+        "employeeId": "string",
+        "employeeName": "string",
+        "id": "string",
+        "status": "string"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "absenceRequest": "[[$current.data]]"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "absenceRequest": "[[ $current.data ]]"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "vbEnterListener"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      }
+   }
+  }
+}

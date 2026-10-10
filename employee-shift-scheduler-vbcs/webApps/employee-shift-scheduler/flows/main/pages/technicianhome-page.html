@@ -1,0 +1,132 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Technician Home"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-12 oj-md-8"></div>
+  <div class="oj-flex-item oj-sm-12 oj-md-4">
+    <oj-button label='Logout' chroming="callToAction" on-oj-action="[[$listeners.buttonAction4]]"></oj-button>
+  </div>
+</div>
+
+<!-- Main Page Title -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h2>Employee Shift &amp; Workforce Portal</h2>
+  </div>
+</div>
+
+<div class="oj-flex oj-sm-padding-horizontal-4x oj-sm-padding-bottom-4x">
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="borderless" label="Home" on-oj-action="[[$listeners.buttonAction6]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="borderless" label="My Shift" on-oj-action="[[$listeners.buttonAction5]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="borderless" label="Overtime" on-oj-action="[[$listeners.buttonAction3]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-padding-2x">
+    <oj-button chroming="borderless" label="Absence" on-oj-action="[[$listeners.buttonAction4]]">
+    </oj-button>
+  </div>
+
+</div>
+
+<!-- Welcome Message -->
+<div class="oj-flex oj-sm-padding-6x-start oj-sm-padding-6x-end oj-sm-padding-2x-bottom">
+  <div class="oj-flex-item oj-sm-12">
+    <oj-highlight-text
+      text="[[ 'Welcome, ' + $application.variables.loggedInUser.name + '. Here’s your current workforce overview.' ]]"
+      match-text="technician">
+    </oj-highlight-text>
+  </div>
+</div>
+
+<!-- Dashboard Cards -->
+<div class="oj-flex oj-sm-flex-wrap-wrap oj-sm-padding-6x-start oj-sm-padding-6x-end">
+
+  <!-- My Team -->
+  <oj-action-card
+    class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h4>MY TEAM</h4>
+
+      <div class="oj-typography-body-md">
+        Team A
+      </div>
+
+      <div class="oj-typography-body-md">
+        Equipment Support
+      </div>
+    </div>
+  </oj-action-card>
+
+  <!-- Today's Shift -->
+  <oj-action-card
+    class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h4>TODAY'S SHIFT</h4>
+
+      <div class="oj-typography-body-md">
+        Morning Shift
+      </div>
+
+      <div class="oj-typography-body-md">
+        06:00 AM - 02:00 PM
+      </div>
+    </div>
+  </oj-action-card>
+
+  <!-- Absence Requests -->
+  <oj-action-card
+    class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h4>ABSENCE REQUESTS</h4>
+      <div class="oj-typography-body-md">
+        <oj-bind-text value ="[['Pending: '+ $application.variables.pendingAbsenceCount]]">
+        </oj-bind-text>
+      </div>
+    </div>
+  </oj-action-card>
+
+  <!-- Overtime Requests -->
+  <oj-action-card
+    class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+    <div class="oj-sm-padding-4x">
+      <h4>OVERTIME REQUESTS</h4>
+      <div class="oj-typography-body-md">
+        <oj-bind-text value="[['Pending: '+ $application.variables.pendingOvertimeCount]]"></oj-bind-text>
+      </div>
+    </div>
+  </oj-action-card>
+
+</div>
+
+<!-- Request Buttons -->
+<div class="oj-flex oj-sm-flex-wrap-wrap oj-sm-padding-6x">
+
+  <div class="oj-flex-item oj-sm-12 oj-md-6 oj-sm-padding-2x">
+    <oj-button
+      class="oj-button-lg"
+      label="Raise Overtime Request" on-oj-action="[[$listeners.buttonAction]]">
+    </oj-button>
+  </div>
+
+  <div class="oj-flex-item oj-sm-12 oj-md-6 oj-sm-padding-2x">
+    <oj-button
+      class="oj-button-lg"
+      label="Raise Absence Request" on-oj-action="[[$listeners.buttonAction2]]">
+    </oj-button>
+  </div>
+
+</div>

@@ -1,0 +1,93 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "3b7f22c1-e71c-443f-91aa-76e0672c226d",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "5e8cd794-b163-4edb-99e3-8c77267a23b4",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "7bc8c127-6af9-4760-9526-3b7a9cdac174",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "eb94d6d5-2931-409f-b10e-895fd59c9575",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "3c8ca03e-07ce-4a5e-bbd0-c5400007b1de",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "7ecbf8bb-a800-4254-bd71-b5d89d729b30",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "datetime",
+            "name": "absenceDate",
+            "oid": "c1076993-b139-4326-b89c-10f28b95aab2",
+            "displayLabel": "absenceDate"
+        },
+        {
+            "type": "string",
+            "name": "absenceType",
+            "oid": "8e4eac31-9bc9-4aed-b22c-9b7ff361c7c7",
+            "displayLabel": "absenceType"
+        },
+        {
+            "type": "string",
+            "name": "reason",
+            "oid": "20f3f3bf-b2a8-403f-8872-d8f0daac6758",
+            "displayLabel": "reason"
+        },
+        {
+            "type": "string",
+            "name": "employeeName",
+            "oid": "7a432114-9daa-4b22-8782-41cb8a7c0579",
+            "displayLabel": "employeeName"
+        },
+        {
+            "type": "string",
+            "name": "employeeId",
+            "oid": "4943f36e-0959-4328-bef9-4e83f781d3d0",
+            "displayLabel": "employeeId"
+        },
+        {
+            "type": "string",
+            "name": "status",
+            "oid": "07c90c3b-efe4-4abf-8343-900027a2e5c8",
+            "displayLabel": "status"
+        }
+    ],
+    "name": "AbsenceRequest",
+    "oid": "1bc771b7-b9bc-4eb0-baf5-858af5a14e78",
+    "displayLabel": "Absence Request"
+}

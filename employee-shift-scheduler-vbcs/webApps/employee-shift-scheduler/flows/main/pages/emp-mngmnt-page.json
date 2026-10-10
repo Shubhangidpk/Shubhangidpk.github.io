@@ -1,0 +1,367 @@
+{
+  "title": "emp mngmnt",
+  "description": "",
+  "variables": {
+    "employeeFilter": {
+      "type": "object"
+    },
+    "employeeManagementListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeManagement",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeManagementResponse",
+        "filterCriterion": "{{ $variables.employeeTableFilter }}"
+      }
+    },
+    "employeeManagementListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeManagement",
+        "keyAttributes": "employeeId",
+        "itemsPath": "items",
+        "responseType": "getallEmployeeManagementResponse2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "employeeName"
+          ]
+        }
+      }
+    },
+    "employeeSearch": {
+      "type": "string"
+    },
+    "employeeSearchSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_EmployeeManagement",
+        "responseType": "getall_EmployeeManagement",
+        "itemsPath": "items",
+        "filterCriterion": "{{ $variables.employeeFilter }}"
+      }
+    },
+    "employeeTableFilter": {
+      "type": "object"
+    },
+    "filteredEmployeeList": {
+      "type": [
+        {
+          "employeeId": "string",
+          "employeeName": "string",
+          "status": "string",
+          "team": "string"
+        }
+      ]
+    },
+    "selectedEmpDetails": {
+      "type": {
+        "employeeId": "string",
+        "employeeName": "string",
+        "status": "string",
+        "team": "string"
+      }
+    },
+    "selectedEmployee": {
+      "type": "object"
+    },
+    "statusSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Status",
+        "responseType": "getall_Status",
+        "itemsPath": "items",
+        "keyAttributes": "status"
+      }
+    },
+    "teamSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Team",
+        "responseType": "getall_Team",
+        "itemsPath": "items",
+        "keyAttributes": "team"
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getall_EmployeeManagement": {
+      "endpoint": "getall_EmployeeManagement",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_Status": {
+      "endpoint": "getall_Status",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_Team": {
+      "endpoint": "getall_Team",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeManagementResponse": {
+      "endpoint": "getall_EmployeeManagement",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallEmployeeManagementResponse2": {
+      "endpoint": "getall_EmployeeManagement",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getall_EmployeeManagement": {
+      "items": [
+        {
+          "employeeId": "string",
+          "employeeName": "string",
+          "id": "number",
+          "status": "string",
+          "team": "string"
+        }
+      ]
+    },
+    "getall_Status": {
+      "items": [
+        {
+          "status": "string"
+        }
+      ]
+    },
+    "getall_Team": {
+      "items": [
+        {
+          "team": "string"
+        }
+      ]
+    },
+    "getallEmployeeManagementResponse": {
+      "items": [
+        {
+          "employeeId": "string",
+          "employeeName": "string",
+          "id": "number",
+          "status": "string",
+          "team": "string"
+        }
+      ]
+    },
+    "getallEmployeeManagementResponse2": {
+      "items": [
+        {
+          "employeeId": "string",
+          "employeeName": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain5",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain3",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain4",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "IconClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick2": {
+      "chains": [
+        {
+          "chain": "IconClickChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick3": {
+      "chains": [
+        {
+          "chain": "IconClickChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick4": {
+      "chains": [
+        {
+          "chain": "DeleteEmployee",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "inputTextValue": {
+      "chains": [
+        {
+          "chain": "InputTextValueChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{ $event.detail.value }}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem2": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "tableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}",
+            "firstSelectedRow": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "vbEnterListener"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+
+   }
+  }
+}

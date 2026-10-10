@@ -1,0 +1,132 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Absence Requests"></oj-vb-fragment-param>
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<div class="oj-sm-padding-6x-start oj-sm-padding-4x-top">
+  <oj-button
+    label="Back"
+    class="oj-button-sm"
+    chroming="callToAction"
+    on-oj-action="[[$listeners.buttonAction3]]">
+  </oj-button>
+</div>
+
+<!-- Page Title -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h2>Absence Requests</h2>
+    <p>
+      Review and approve absence requests submitted by technicians.
+    </p>
+  </div>
+</div>
+
+<!-- Absence Requests -->
+<div class="oj-flex oj-sm-padding-horizontal-6x">
+  <!-- No Pending Requests -->
+<oj-bind-if test="[[ $variables.absenceRequests.length === 0 ]]">
+  <div class="oj-flex oj-sm-padding-6x">
+    <div class="oj-flex-item oj-sm-12">
+      <h3>No pending absence requests for approval.</h3>
+    </div>
+  </div>
+
+</oj-bind-if>
+
+  <oj-bind-for-each data="[[ $variables.absenceRequests ]]">
+    <template>
+
+      <!-- Request Card -->
+      <oj-action-card class="oj-flex-item oj-sm-12 oj-sm-margin-4x-bottom">
+
+        <div class="oj-sm-padding-5x">
+
+          <div class="oj-flex">
+
+            <!-- Employee -->
+            <div class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+              <strong>Employee</strong>
+
+              <div>
+                <oj-bind-text value="[[$current.data.employeeId]]"></oj-bind-text>
+              </div>
+
+              <div>
+                <oj-bind-text value="[[$current.data.employeeName]]"></oj-bind-text>
+              </div>
+            </div>
+
+            <!-- Absence Date -->
+            <div class="oj-flex-item oj-sm-12 oj-md-2 oj-sm-padding-2x">
+              <strong>Absence Date</strong>
+
+              <div>
+                <oj-bind-text
+  value="[[ new Date($current.data.absenceDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) ]]">
+</oj-bind-text>
+              </div>
+            </div>
+
+            <!-- Absence Type -->
+            <div class="oj-flex-item oj-sm-12 oj-md-2 oj-sm-padding-2x">
+              <strong>Absence Type</strong>
+
+              <div>
+                <oj-bind-text value="[[$current.data.absenceType]]"></oj-bind-text>
+              </div>
+            </div>
+
+            <!-- Reason -->
+            <div class="oj-flex-item oj-sm-12 oj-md-3 oj-sm-padding-2x">
+              <strong>Reason</strong>
+
+              <div>
+                <oj-bind-text value="[[$current.data.reason]]"></oj-bind-text>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="oj-flex-item oj-sm-12 oj-md-2 oj-sm-padding-2x">
+              <strong>Status</strong>
+
+              <div>
+                <span class="oj-badge oj-badge-warning">
+                  <oj-bind-text value="[[$current.data.status]]"></oj-bind-text>
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Actions -->
+          <div class="oj-flex oj-sm-margin-4x-top">
+
+            <!-- Approve -->
+            <div class="oj-flex-item oj-sm-padding-2x">
+              <oj-button
+                label="Approve"
+                on-oj-action="[[$listeners.buttonAction]]">
+              </oj-button>
+            </div>
+
+            <!-- Reject -->
+            <div class="oj-flex-item oj-sm-padding-2x">
+              <oj-button
+                label="Reject"
+                chroming="outlined"
+                on-oj-action="[[$listeners.buttonAction2]]">
+              </oj-button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </oj-action-card>
+
+    </template>
+  </oj-bind-for-each>
+
+</div>

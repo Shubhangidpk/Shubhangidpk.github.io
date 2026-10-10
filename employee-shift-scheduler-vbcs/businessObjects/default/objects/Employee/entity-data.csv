@@ -1,0 +1,11 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,age,firstName,lastName,contactNumber,emailAddress,qualification,fullName,salaryRange,salary
+63,2026-09-22T12:51:16,2026-09-22T12:51:16.061,OEG.Student,OEG.Student,22.0,Gargi,Kumari,67476.0,fif@gmail.com,,,,11000
+64,2026-09-22T12:51:16,2026-09-22T12:51:16.042,OEG.Student,OEG.Student,33.0,Giga,Raan,65765.0,ded@gmail.com,,,,11000
+65,2026-09-22T12:51:16,2026-09-22T12:51:16.079,OEG.Student,OEG.Student,22.0,Reena,Goyal,54645.0,renhi@gmail.com,,,,11000
+66,2026-09-22T13:25:48,2026-09-22T13:25:48.055,OEG.Student,OEG.Student,22.0,Gargi,Kumari,67476.0,fif@gmail.com,,,,11000
+67,2026-09-22T13:25:49,2026-09-22T13:25:49.049,OEG.Student,OEG.Student,33.0,Giga,Raan,65765.0,ded@gmail.com,,,,11000
+68,2026-09-22T13:25:49,2026-09-22T13:25:49.058,OEG.Student,OEG.Student,22.0,Reena,Goyal,54645.0,renhi@gmail.com,,,,11000
+69,2026-09-22T13:26:18,2026-09-22T13:26:18.317,OEG.Student,OEG.Student,22.0,Gargi,Kumari,67476.0,fif@gmail.com,,,,11000
+70,2026-09-22T13:26:18.298,2026-09-22T13:26:18.319,OEG.Student,OEG.Student,33.0,Giga,Raan,65765.0,ded@gmail.com,,,,11000
+71,2026-09-22T13:26:18.31,2026-09-22T13:26:18.321,OEG.Student,OEG.Student,22.0,Reena,Goyal,54645.0,renhi@gmail.com,,,,11000
+83,2026-09-27T14:08:17,2026-09-27T14:08:20.383,OEG.Student,OEG.Student,24.0,Seema,Kumari,,seemakumari@gmail.com,MBA,,,

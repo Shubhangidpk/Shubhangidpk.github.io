@@ -1,0 +1,70 @@
+{
+  "title": "main",
+  "description": "",
+  "variables": {
+    "employeeId": {
+      "type": "string"
+    },
+    "loggedInUser": {
+      "type": "User"
+    },
+    "loginError": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "users": {
+      "type": "User[]",
+      "defaultValue": [
+        {
+          "employeeId": "TECH01",
+          "password": "tech123",
+          "role": "Technician",
+          "name": "John Doe"
+        },
+        {
+          "employeeId": "MGR01",
+          "password": "mgr123",
+          "role": "Manager",
+          "name": "Sarah Smith"
+        }
+      ]
+    }
+  },
+  "metadata": {},
+  "types": {
+    "User": {
+      "employeeId": "string",
+      "name": "string",
+      "password": "string",
+      "role": "string"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "signInActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-input-password": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      }
+   }
+  }
+}

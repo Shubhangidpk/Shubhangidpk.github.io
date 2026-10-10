@@ -1,0 +1,105 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "acb70835-3168-4f10-b1ad-20e4c3c6f7f1",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "b6189330-5076-4b5c-bdd4-ae08b00ba751",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "9537c0c9-941b-443f-8fb1-8d2afc1d65b1",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "132a28ff-70ab-434a-ae08-7465b4fd2fd3",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "fb103dd0-205c-4222-ab35-92cfcf0029be",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "f6ac07a4-7f0f-433d-8a00-0e1ecae44d20",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "country",
+            "oid": "f51c9351-80b2-4c5f-9583-c19077ab21f2",
+            "displayLabel": "Country"
+        },
+        {
+            "type": "string",
+            "name": "region",
+            "oid": "13a0ed8e-6334-46fa-b843-80766de16536",
+            "displayLabel": "Region"
+        },
+        {
+            "type": "string",
+            "name": "population",
+            "oid": "64547a7d-3de1-4f04-b781-363bd0052e15",
+            "displayLabel": "Population"
+        },
+        {
+            "type": "string",
+            "name": "gDP",
+            "oid": "6951821c-bc60-4352-99e1-4def7d69e73a",
+            "displayLabel": "GDP"
+        },
+        {
+            "type": "string",
+            "name": "literacy",
+            "oid": "239050bc-16f0-4209-be6f-cd3f658f8329",
+            "displayLabel": "Literacy"
+        },
+        {
+            "type": "string",
+            "name": "birthrate",
+            "oid": "cb90d71a-6b87-4e84-bdf2-83cfeef8d774",
+            "displayLabel": "Birthrate"
+        },
+{
+            "type": "string",
+            "name": "deathrate",
+            "oid": "ffd61ae0-c112-49b3-9747-d2540fd48cc0",
+            "displayLabel": "Deathrate"
+        },
+        {
+            "type": "string",
+            "name": "code",
+            "oid": "8a4d90ca-de66-443c-8937-4138fcef186c",
+            "displayLabel": "code"
+        }
+    ],
+    "name": "Countries",
+    "oid": "c7ba645b-81cb-4e70-914d-5f79c58cc047",
+    "displayLabel": "Countries"
+}

@@ -1,0 +1,60 @@
+{
+  "title": "Over Time Request",
+  "description": "",
+  "variables": {
+    "overtimeDate": {
+      "type": "string"
+    },
+    "overtimeHours": {
+      "type": "number"
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "submitOvertimeRequest",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      }
+   }
+  }
+}

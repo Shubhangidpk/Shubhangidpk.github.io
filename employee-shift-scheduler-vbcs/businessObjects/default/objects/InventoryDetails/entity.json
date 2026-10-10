@@ -1,0 +1,75 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "a9ffdfd4-f252-4ff0-8fbc-7a06aa115f91",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "b856e5c2-4be8-4c07-91fd-c69873b7eaad",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "716aca8b-dfda-411b-99f4-5f58c1e9699e",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "ec7f523a-697b-43bf-add6-8f8af18cdfff",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "39d630ff-9c53-4a88-876b-a26b994f02b2",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+{
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "7e85aa82-1d1e-4efe-a44f-90bbcf48a1ac",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "name",
+            "oid": "5e66ec4d-6c02-45dd-8acb-94e09820c04b",
+            "displayLabel": "name"
+        }        ,
+        {
+            "type": "string",
+            "name": "quantity",
+            "oid": "6e3caf74-95ec-4674-a1fb-5db754ee9167",
+            "displayLabel": "quantity"
+        }        ,
+        {
+            "type": "string",
+            "name": "description",
+            "oid": "77057e74-9561-4692-9873-dd49e3740d80",
+            "displayLabel": "description"
+        }
+    ],
+    "name": "InventoryDetails",
+    "oid": "5cae7558-7143-47a2-a00a-bd63c6a2fe88",
+    "displayLabel": "Inventory Details"
+}

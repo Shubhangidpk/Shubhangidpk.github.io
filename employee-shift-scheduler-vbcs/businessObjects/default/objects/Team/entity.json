@@ -1,0 +1,63 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "8e735f4d-8783-4daf-a4a6-0228972ae144",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "cd6bc04e-7131-4d3c-ac59-850440880b00",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "717f9869-ec0a-4988-904c-ed633ff6b364",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "11e4a077-fca2-4a33-b919-bfc42c3ad30b",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "acdd0e42-5a9b-40ce-a529-29542021d2af",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "c76893ea-e13f-4d8a-9052-58131a15667a",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "team",
+            "oid": "2b99e439-1a8f-4527-923d-35a79b918730",
+            "displayLabel": "Team"
+        }
+    ],
+    "name": "Team",
+    "oid": "a1529d2c-9853-426a-ba16-21ce259fc396",
+    "displayLabel": "Team"
+}

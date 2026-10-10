@@ -1,0 +1,147 @@
+{
+  "title": "Create TechnicianShift",
+  "description": "Creates new TechnicianShift",
+  "variables": {
+    "createTechnicianShiftChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "scheduleTimingShiftSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ScheduleTiming",
+        "responseType": "getall_ScheduleTiming",
+        "itemsPath": "items",
+        "keyAttributes": "shift",
+        "filterCriterion": {
+          "op": "$eq",
+          "attribute": "time1",
+          "value": "{{ $variables.technicianShift.time1 }}"
+        }
+      }
+    },
+    "scheduleTimingTimeSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ScheduleTiming",
+        "responseType": "getall_ScheduleTimingTime",
+        "itemsPath": "items",
+        "keyAttributes": "time1"
+      }
+    },
+    "teamSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Team",
+        "responseType": "getall_Team",
+        "itemsPath": "items"
+      }
+    },
+    "technicianShift": {
+      "type": "createTechnicianShiftRequest"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.createTechnicianShiftRequest": {
+      "endpoint": "create_TechnicianShift",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "@decorators.getall_ScheduleTiming": {
+      "endpoint": "getall_ScheduleTiming",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_ScheduleTimingTime": {
+      "endpoint": "getall_ScheduleTiming",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getall_Team": {
+      "endpoint": "getall_Team",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "createTechnicianShiftRequest": {
+      "currentShift": "string",
+      "date1": "string",
+      "employeeName": "string",
+      "team": "string",
+      "time1": "string"
+
+    },
+    "getall_ScheduleTiming": {
+      "items": [
+        {
+          "shift": "string"
+        }
+      ]
+    },
+    "getall_ScheduleTimingTime": {
+      "items": [
+        {
+          "time1": "string"
+        }
+      ]
+    },
+    "getall_Team": {
+      "items": [
+        {
+          "team": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "backButtonClicked": {
+      "chains": [
+        {
+          "chain": "goBackChain"
+        }
+      ]
+    },
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chain": "createTechnicianShiftChain"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+   }
+  }
+}

@@ -1,0 +1,87 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "622e0cba-0ea3-4fa0-8c2e-5ef4434870db",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Employee Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "50200102-6d8e-4100-b1bb-3dd6a1568f14",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "2d281287-541a-4322-915b-e1c39fdc518f",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "4a547644-91a1-4366-8fab-d978d6bab7e7",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "cb201217-15b5-4913-be3f-c1e655b70d3c",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "d7479335-e01a-41de-aced-0e7cb28f0d2e",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "employeeName",
+            "oid": "d892b5e9-b430-4b2a-b684-74f2de434366",
+            "displayLabel": "Employee Name"
+        },
+        {
+            "type": "string",
+            "name": "currentShift",
+            "oid": "8fe51f64-be8f-47fb-a370-4bdd01b37ec1",
+            "displayLabel": "Current Shift"
+        },
+        {
+            "type": "string",
+            "name": "team",
+            "oid": "cba85e2a-a23d-4b12-8bb9-114e2006bc49",
+            "displayLabel": "Team"
+        },
+        {
+            "type": "string",
+            "name": "date1",
+            "oid": "65c012a6-7576-4103-a178-a732d4d8dae9",
+            "displayLabel": "Date"
+        },
+        {
+            "type": "string",
+            "name": "time1",
+            "oid": "997a8733-8852-4787-97aa-4d25296f7453",
+            "displayLabel": "Time"
+        }
+    ],
+    "name": "TechnicianShift",
+    "oid": "97749d43-dc24-404f-8ec7-6a609002f761",
+    "displayLabel": "Technician Shift"
+}

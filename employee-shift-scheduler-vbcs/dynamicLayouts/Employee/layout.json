@@ -1,0 +1,86 @@
+{
+  "layoutTypes": {
+    "businessObjects": {
+      "kind": "operationRef",
+      "serviceId": "businessObjects",
+      "operations": [
+        "get_Employee"
+      ]
+    }
+  },
+  "layouts": {
+
+    "myProfileRule": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "MyProfileRule",
+      "rules": [
+        "FullProfile",
+        "PartialProfile"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "id",
+              "firstName",
+              "lastName",
+              "emailAddress",
+              "age",
+              "contactNumber"
+            ],
+            "readonly": true
+          }
+        },
+        "fullProfile": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "FullProfile",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "id",
+              "firstName",
+              "lastName",
+              "emailAddress",
+              "age",
+              "contactNumber"
+            ]
+          },
+          "usedIn": []
+        },
+        "partialProfile": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "PartialProfile",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "contactNumber"
+            ]
+          },
+          "usedIn": []
+        }
+      }
+    },
+    "PartialProfile": {
+      "expression": "[[ $componentContext.profile === 'partial' ? 'partialProfile' : null ]]"
+    },
+    "FullProfile": {
+      "expression": "[[ $componentContext.profile === 'full' ? 'fullProfile' : null ]]"
+    }
+  },
+  "templates": {},
+  "types": {},
+  "componentContextType": {
+    "@dt": {
+      "profile": {
+        "description": "Its the type of profile"
+      }
+    },
+    "profile": "string"
+  }
+}

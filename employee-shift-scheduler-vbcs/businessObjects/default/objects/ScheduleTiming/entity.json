@@ -1,0 +1,69 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "7861cb5e-c9a2-4784-b772-c0604d0e73b7",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "f314948a-b6b0-4faa-b64c-229e73201f4c",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "b353cf6a-6a06-4bdc-b7b7-c64b7e07a6b1",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "d9390e02-1962-4c90-af1c-6e817192aee5",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "112c5fdc-458d-42b3-a08d-7fc67f9cc9b7",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "947cc601-4c1d-4e09-8fa6-fcb57d3cc055",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "time1",
+            "oid": "1ef3f912-a085-48a2-8171-113caed13a6a",
+            "displayLabel": "Time"
+        },
+        {
+            "type": "string",
+            "name": "shift",
+            "oid": "bdcfc7e0-8dc0-47be-bafc-6ffe977207f9",
+            "displayLabel": "Shift"
+        }
+    ],
+    "name": "ScheduleTiming",
+    "oid": "e16cdf89-81b1-4d95-8b3c-149dbb224b48",
+    "displayLabel": "Schedule Timing"
+}

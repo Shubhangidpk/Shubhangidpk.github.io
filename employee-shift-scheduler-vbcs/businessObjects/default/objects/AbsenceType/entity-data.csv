@@ -1,0 +1,6 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,leaveTypes
+1,2026-10-07T14:31:47,2026-10-07T14:31:47.012,notify@oracleerpguide.com,notify@oracleerpguide.com,Casual Leave
+2,2026-10-07T14:32:25,2026-10-07T14:32:25.004,notify@oracleerpguide.com,notify@oracleerpguide.com,Sick Leave
+3,2026-10-07T14:32:42,2026-10-07T14:32:42.012,notify@oracleerpguide.com,notify@oracleerpguide.com,Privilege Leave
+4,2026-10-07T14:32:52,2026-10-07T14:32:52.005,notify@oracleerpguide.com,notify@oracleerpguide.com,Maternity Leave
+5,2026-10-07T14:33:01,2026-10-07T14:33:01.014,notify@oracleerpguide.com,notify@oracleerpguide.com,Paternity Leave

@@ -1,0 +1,63 @@
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param
+    name="title"
+    value="Absence Request">
+  </oj-vb-fragment-param>
+
+  <template slot="actions">
+  </template>
+</oj-vb-fragment>
+
+<!-- Page Title -->
+<div class="oj-flex oj-sm-padding-6x">
+  <div class="oj-flex-item oj-sm-12">
+    <h2>Raise Absence Request</h2>
+  </div>
+</div>
+
+<!-- Request Form -->
+<div>
+  <oj-button label='Back' class="oj-flex-item oj-sm-2 oj-md-2 oj-button-sm" chroming="callToAction"
+    on-oj-action="[[$listeners.buttonAction2]]"></oj-button>
+</div>
+<div class="oj-flex oj-sm-padding-8x-start oj-sm-padding-8x-end">
+
+  <div class="oj-flex-item oj-sm-12 oj-md-8">
+
+    <oj-form-layout
+      label-edge="top"
+      columns="1">
+
+      <!-- Absence Date -->
+      <oj-input-date
+        label-hint="Absence Date" value="{{ $variables.absenceDate }}">
+      </oj-input-date>
+
+      <!-- Absence Type -->
+      <oj-select-single label-hint="Absence Type" data="[[ $variables.absenceTypeSDP ]]" item-text="leaveTypes">
+      </oj-select-single>
+
+      <!-- Reason -->
+      <oj-text-area
+        label-hint="Reason for Absence"
+        rows="5" value="{{ $variables.reason }}">
+      </oj-text-area>
+
+    </oj-form-layout>
+
+    <!-- Buttons -->
+    <div class="oj-flex oj-sm-padding-4x-top">
+
+      <div class="oj-flex-item oj-sm-padding-2x">
+        <oj-button label="Submit Request" on-oj-action="[[$listeners.buttonAction]]"></oj-button>
+      </div>
+
+      <div class="oj-flex-item oj-sm-padding-2x">
+        <oj-button label="Cancel"></oj-button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

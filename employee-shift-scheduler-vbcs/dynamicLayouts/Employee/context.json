@@ -1,0 +1,20 @@
+{
+  "ObjectContext": {
+    "profile": {
+      "@dt": {
+        "labelHint": "profile",
+        "description": ""
+      },
+      "type": "string"
+    }
+  },
+  "objectContext": {
+    "profile": {
+      "@dt": {
+        "labelHint": "contextParam1",
+        "description": ""
+      },
+      "type": "string"
+    }
+  }
+}

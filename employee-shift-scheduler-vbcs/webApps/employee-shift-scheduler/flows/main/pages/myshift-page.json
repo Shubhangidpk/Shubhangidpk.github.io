@@ -1,0 +1,98 @@
+{
+  "title": "myshift",
+  "description": "",
+  "variables": {
+    "selectedShift": {
+      "type": {
+        "date": "string",
+        "shift": "string",
+        "team": "string",
+        "time": "string"
+      }
+    },
+    "shiftData": {
+      "type": [
+        {
+          "date": "string",
+          "shift": "string",
+          "team": "string",
+          "time": "string"
+        }
+      ],
+      "defaultValue": [
+        {
+          "date": "06-Oct-2026",
+          "shift": "Morning",
+          "time": "06:00 AM - 02:00 PM",
+          "team": "Team A"
+        },
+        {
+          "date": "07-Oct-2026",
+          "shift": "Morning",
+          "time": "06:00 AM - 02:00 PM",
+          "team": "Team A"
+        },
+        {
+          "date": "08-Oct-2026",
+          "shift": "Evening",
+          "time": "02:00 PM - 10:00 PM",
+          "team": "Team A"
+        }
+      ]
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "viewShiftDetails",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "shift": "{{$current.data}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-action-card": {
+        "path": "ojs/ojactioncard"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+   }
+  }
+}

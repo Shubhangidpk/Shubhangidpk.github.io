@@ -1,0 +1,12 @@
+{
+    "backends": {
+        "Users": {
+            "servers": [
+                {
+                    "url": "https://reqres.in",
+                    "description": "Reqres In"
+                }
+            ]
+        }
+      }
+}
