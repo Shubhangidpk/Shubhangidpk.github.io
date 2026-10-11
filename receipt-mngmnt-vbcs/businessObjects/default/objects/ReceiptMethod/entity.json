@@ -1,0 +1,63 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "ce0fec86-b285-41f8-987f-46d91f58cdba",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "2dbcff24-2c43-4e9a-b492-5d9e85f901ad",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "7c47098a-1a2a-4f29-a5bf-606590701027",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "0125b040-aee7-4951-9c1f-208e2c971f65",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "f68764e6-d096-4db5-bfea-8bc3e9a06234",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "81fe718d-2f62-45c7-96cd-f7f896c05109",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "method",
+            "oid": "abeb0f28-ea87-486d-810b-9c8b087a6b47",
+            "displayLabel": "method"
+        }
+    ],
+    "name": "ReceiptMethod",
+    "oid": "7d936341-676e-4c3e-8231-0bbcb4733ac1",
+    "displayLabel": "Receipt Method"
+}

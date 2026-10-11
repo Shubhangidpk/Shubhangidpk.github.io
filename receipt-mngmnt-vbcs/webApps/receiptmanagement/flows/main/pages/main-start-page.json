@@ -1,0 +1,381 @@
+{
+  "title": "main",
+  "description": "",
+  "variables": {
+    "accountDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_AccountDetails",
+        "keyAttributes": "accountNumber",
+        "itemsPath": "items",
+        "responseType": "getallAccountDetailsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "accountNumber"
+          ]
+        }
+      }
+    },
+    "accountDetailsListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_AccountDetails",
+        "keyAttributes": "accountNumber",
+        "itemsPath": "items",
+        "responseType": "getallAccountDetailsResponse2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "maskedAccntNumber"
+          ]
+        }
+      }
+    },
+    "accountType": {
+      "type": "string"
+    },
+    "approvalStatus": {
+      "type": "string"
+    },
+    "approverComment": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "branchName": {
+      "type": "string"
+    },
+    "businessUnitsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_BusinessUnits",
+        "keyAttributes": "businessUnitName",
+        "itemsPath": "items",
+        "responseType": "getallBusinessUnitsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "businessUnitName"
+          ]
+        }
+      }
+    },
+    "currencyADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "data": "{{ $variables.currencyArray }}",
+        "itemType": "CurrencyType",
+        "keyAttributes": "value"
+      }
+    },
+    "currencyArray": {
+      "type": "CurrencyType[]",
+      "defaultValue": [
+        {
+          "label": "USD",
+          "value": "USD"
+        }
+      ]
+    },
+    "FileADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "FileType",
+        "keyAttributes": "@value"
+      }
+    },
+    "ojTabBar812955251SelectedItem": {
+      "type": "string",
+      "defaultValue": "oj-tab-bar-81295525-1-tab-1"
+    },
+    "receiptAmount": {
+      "type": "number"
+    },
+    "ReceiptApprovalSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Receipts",
+        "responseType": "getall_Receipts",
+        "itemsPath": "items"
+      }
+    },
+    "receiptComment": {
+      "type": "string"
+    },
+    "receiptMethodListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_ReceiptMethod",
+        "keyAttributes": "method",
+        "itemsPath": "items",
+        "responseType": "getallReceiptMethodResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "method"
+          ]
+        }
+      }
+    },
+    "receiptNumber": {
+      "type": "string"
+    },
+    "receipts": {
+      "type": "object[]"
+    },
+    "selectedReceiptId": {
+      "type": "string"
+    },
+    "selectedReceiptNumber": {
+      "type": "string"
+    },
+    "ValidateForm": {
+      "type": "string"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getall_Receipts": {
+      "endpoint": "getall_Receipts",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAccountDetailsResponse": {
+      "endpoint": "getall_AccountDetails",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallAccountDetailsResponse2": {
+      "endpoint": "getall_AccountDetails",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallBusinessUnitsResponse": {
+      "endpoint": "getall_BusinessUnits",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallReceiptMethodResponse": {
+      "endpoint": "getall_ReceiptMethod",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "CurrencyType": {
+      "label": "string",
+      "value": "string"
+    },
+    "FileType": {
+      "FileName": "string",
+      "FileRef": "any",
+      "FileSize": "number",
+      "FileType": "string"
+    },
+    "getall_Receipts": {
+      "items": [
+        {
+          "accountType": "string",
+          "amount": "string",
+          "approverComment": "string",
+          "bankName": "string",
+          "branchName": "string",
+          "businessUnit": "string",
+          "comment1": "string",
+          "currency": "string",
+          "id": "number",
+          "receiptDate": "string",
+          "receiptMethod": "string",
+          "receiptNumber": "string",
+          "status": "string"
+        }
+      ]
+    },
+    "getallAccountDetailsResponse": {
+      "items": [
+        {
+          "accountNumber": "string"
+        }
+      ]
+    },
+    "getallAccountDetailsResponse2": {
+      "items": [
+        {
+          "accountNumber": "string",
+          "accountType": "string",
+          "bankName": "string",
+          "branchName": "string",
+          "maskedAccntNumber": "string"
+        }
+      ]
+    },
+    "getallBusinessUnitsResponse": {
+      "items": [
+        {
+          "businessUnitName": "string"
+        }
+      ]
+    },
+    "getallReceiptMethodResponse": {
+      "items": [
+        {
+          "method": "string"
+        }
+      ]
+    }
+
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "submitReceipt",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "approveReceipt",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "filePickerSelect": {
+      "chains": [
+        {
+          "chain": "FilePickerSelectChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "files": "[[ Array.prototype.slice.call($event.detail.files) ]]",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "receiptApprovalTableFirstSelectedRow": {
+      "chains": [
+        {
+          "chain": "TableFirstSelectedRowChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "rowKey": "{{$event.detail.value.key}}",
+            "rowData": "{{$event.detail.value.data}}",
+            "firstSelectedRow": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "UpdateBankDetailsActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-collapsible": {
+        "path": "ojs/ojcollapsible"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-file-picker": {
+        "path": "ojs/ojfilepicker"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-switch": {
+        "path": "ojs/ojswitch"
+      },
+      "oj-switcher": {
+        "path": "ojs/ojswitcher"
+      },
+      "oj-tab-bar": {
+        "path": "ojs/ojnavigationlist"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+   }
+  }
+}

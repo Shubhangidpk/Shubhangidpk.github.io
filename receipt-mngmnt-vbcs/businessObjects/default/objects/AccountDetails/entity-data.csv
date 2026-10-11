@@ -1,0 +1,5 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,bankName,branchName,accountType,accountNumber,maskedAccntNumber
+1,2026-10-11T06:58:04,2026-10-11T07:04:51,notify@oracleerpguide.com,notify@oracleerpguide.com,IRG Ltd.,Ahamadabad,Savings,3243232,XXX3232
+2,2026-10-11T06:58:34,2026-10-11T07:05:07,notify@oracleerpguide.com,notify@oracleerpguide.com,ICSI Ltd.,Pune,Savings,867585,XXX585
+3,2026-10-11T06:59:05,2026-10-11T07:05:25,notify@oracleerpguide.com,notify@oracleerpguide.com,ICSI Ltd.,Pune,Savings,657335,XXX335
+4,2026-10-11T06:59:34,2026-10-11T07:05:37,notify@oracleerpguide.com,notify@oracleerpguide.com,UCO Ltd.,Bangalore,Savings,437653,XXX653

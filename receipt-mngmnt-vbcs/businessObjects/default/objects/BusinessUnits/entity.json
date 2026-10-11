@@ -1,0 +1,63 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "6711e616-9d44-44f6-a690-0933a20a7b8d",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "c871d1ce-ca2b-4f54-967b-8eea06e965b1",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "af414d22-cbd9-44ec-82d7-61a22885819b",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "b404b097-274e-4598-b03a-d065c2825b71",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "e9ad5772-b238-4066-ba56-c60c27e0923f",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "bbef3414-4d09-4508-8341-6706575cdd5c",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "businessUnitName",
+            "oid": "8c9053c5-a86c-4ea7-9aca-c62a0aa162b7",
+            "displayLabel": "Business Unit Name"
+        }
+    ],
+    "name": "BusinessUnits",
+    "oid": "902af29c-0c4b-40e5-b9dc-a4015e407497",
+    "displayLabel": "Business Units"
+}

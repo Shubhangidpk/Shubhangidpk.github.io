@@ -1,0 +1,129 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "19aba6ef-d0fd-4cfd-a47b-cb9a3d1126c6",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "9aa5ca44-f30f-49dd-bcdc-58c7b246e6eb",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "f86b32c6-9b11-4004-8b0b-e448988fa212",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "91386d4b-952d-4ee3-917d-cd4e0292f6c1",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "6ed95cba-24d4-42ea-b69b-db7751955d5c",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "46420b41-356a-4239-9533-c0e53d7d84c8",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "receiptNumber",
+            "oid": "646bcb6b-59ab-4a8d-b1c7-bed2b732f1f1",
+            "displayLabel": "receiptNumber"
+        },
+        {
+            "type": "string",
+            "name": "amount",
+            "oid": "a38a404a-700b-446e-b0c6-44f6c8c585af",
+            "displayLabel": "amount"
+        },
+        {
+            "type": "string",
+            "name": "businessUnit",
+            "oid": "f9865bd4-2c50-44b2-b564-d4600514db9d",
+            "displayLabel": "businessUnit"
+        },
+        {
+            "type": "string",
+            "name": "receiptMethod",
+            "oid": "fc83ee3f-676c-46d9-8670-3e9b8401f9fd",
+            "displayLabel": "receiptMethod"
+        },
+        {
+            "type": "string",
+            "name": "currency",
+            "oid": "5356fcc8-073c-45f4-babb-fa199f344d21",
+            "displayLabel": "currency"
+        },
+        {
+            "type": "string",
+            "name": "receiptDate",
+            "oid": "118209a5-f915-49ed-9b12-f5405fb00459",
+            "displayLabel": "receiptDate"
+        },
+        {
+            "type": "string",
+            "name": "comment1",
+            "oid": "0e9d393a-37a5-4aaf-a95a-1c0ef76cf2b9",
+            "displayLabel": "comment"
+        },
+        {
+            "type": "string",
+            "name": "status",
+            "oid": "9f4d995d-3a87-4d71-b3ae-de63b48ef28c",
+            "displayLabel": "status"
+        },
+        {
+            "type": "string",
+            "name": "approverComment",
+            "oid": "0ecc0173-df18-4fea-b2d7-718039c62525",
+            "displayLabel": "approverComment"
+        },
+        {
+            "type": "string",
+            "name": "bankName",
+            "oid": "102775ba-516a-4509-b61b-eed6e9de86b6",
+            "displayLabel": "bankName"
+        },
+        {
+            "type": "string",
+            "name": "branchName",
+            "oid": "c9190602-5a8f-4f30-ae09-116997644ec7",
+            "displayLabel": "branchName"
+        },
+        {
+            "type": "string",
+            "name": "accountType",
+            "oid": "534d2c32-542d-4d7a-be38-1f72f955dd31",
+            "displayLabel": "accountType"
+        }
+    ],
+    "name": "Receipts",
+    "oid": "1306fc68-e552-47b2-ae39-3a4321fcb823",
+    "displayLabel": "Receipts"
+}

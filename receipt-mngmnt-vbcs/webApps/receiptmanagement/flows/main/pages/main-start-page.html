@@ -1,0 +1,286 @@
+
+<oj-vb-fragment id="page-header" bridge="[[vbBridge]]" name="page-header">
+  <oj-vb-fragment-param name="title" value="Receipt Management"></oj-vb-fragment-param>
+  <template slot="actions"></template>
+</oj-vb-fragment>
+
+<div class="oj-flex oj-sm-padding-4x">
+  <div class="oj-flex-item oj-sm-12">
+    <h3>Receipt Management</h3>
+    <p>Submit receipts and manage their approval status.</p>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="oj-flex">
+  <oj-tab-bar
+    id="receiptTabBar"
+    edge="top"
+    selection="{{ $variables.ojTabBar812955251SelectedItem }}"
+    class="oj-flex-item oj-sm-12 oj-md-12">
+    <ul>
+      <li id="oj-tab-bar-81295525-1-tab-1">
+        <a href="#" id="oj-tab-bar-81295525-1-tab-1-tab"
+           aria-controls="oj-tab-bar-81295525-1-tab-1-panel">
+          Create Receipt
+        </a>
+      </li>
+      <li id="oj-tab-bar-81295525-1-tab-2">
+        <a href="#" id="oj-tab-bar-81295525-1-tab-2-tab"
+           aria-controls="oj-tab-bar-81295525-1-tab-2-panel">
+          Approve Receipt
+        </a>
+      </li>
+    </ul>
+  </oj-tab-bar>
+</div>
+
+<!-- CREATE RECEIPT PANEL -->
+<oj-bind-if test="[[ $variables.ojTabBar812955251SelectedItem === 'oj-tab-bar-81295525-1-tab-1' ]]">
+  <div id="oj-tab-bar-81295525-1-tab-1-panel"
+       role="tabpanel"
+       aria-labelledby="oj-tab-bar-81295525-1-tab-1-tab">
+
+    <div class="oj-flex oj-sm-padding-4x">
+      <div class="oj-flex-item oj-sm-12">
+        <h4>Create Receipt</h4>
+        <p>Enter the receipt and bank remittance details below.</p>
+      </div>
+    </div>
+
+    <!-- One validation group covers all mandatory receipt fields -->
+    <oj-validation-group
+      id="receiptValidationGroup"
+      valid="{{ $variables.ValidateForm }}">
+
+      <!-- Standard Receipt Information -->
+      <oj-collapsible expanded="true">
+        <h6 slot="header">Standard Receipt Information</h6>
+
+        <oj-form-layout columns="3" max-columns="3">
+
+          <oj-select-single
+            label-hint="Choose Business Unit"
+            data="[[$variables.businessUnitsListSDP]]"
+            item-text="businessUnitName"
+            required="true">
+          </oj-select-single>
+
+          <oj-select-single
+            label-hint="Choose Receipt Method"
+            data="[[$variables.receiptMethodListSDP]]"
+            item-text="method"
+            required="true">
+          </oj-select-single>
+
+          <oj-input-text
+            label-hint="Enter Receipt Number"
+            required="true"
+            value="{{ $variables.receiptNumber }}">
+          </oj-input-text>
+
+          <oj-input-number
+            label-hint="Enter Amount"
+            min="0.01"
+            required="true"
+            value="{{ $variables.receiptAmount }}">
+          </oj-input-number>
+
+          <oj-input-date
+            label-hint="Choose Receipt Date"
+            required="true">
+          </oj-input-date>
+
+          <oj-select-single
+            label-hint="Choose Currency"
+            data="[[$variables.currencyADP]]"
+            required="true">
+          </oj-select-single>
+
+          <oj-input-text
+            label-hint="Enter Comment"
+            required="true"
+            value="{{ $variables.receiptComment }}">
+          </oj-input-text>
+
+          <oj-switch
+            label-hint="Remittance Bank Allow Override">
+          </oj-switch>
+
+          <div class="oj-flex oj-sm-align-items-center">
+            <oj-button
+              label="Upload Attachments"
+              chroming="outlined"
+              on-oj-action="[[$listeners.buttonAction]]">
+              <span slot="startIcon" class="oj-ux-ico-attachment"></span>
+            </oj-button>
+          </div>
+
+        </oj-form-layout>
+      </oj-collapsible>
+
+      <!-- Bank Remittance Details -->
+      <oj-collapsible expanded="true">
+        <h6 slot="header">Bank Remittance Details</h6>
+
+        <oj-form-layout columns="2" max-columns="2">
+
+          <oj-select-single
+            label-hint="Choose Account Number"
+            item-text="maskedAccntNumber"
+            data="[[$variables.accountDetailsListSDP2]]"
+            on-value-item-changed="[[$listeners.selectValueItem]]"
+            required="true">
+          </oj-select-single>
+
+          <oj-input-text
+            label-hint="Bank Name"
+            readonly="true"
+            value="{{ $variables.bankName }}">
+          </oj-input-text>
+
+          <oj-input-text
+            label-hint="Branch Name"
+            readonly="true"
+            value="{{ $variables.branchName }}">
+          </oj-input-text>
+
+          <oj-input-text
+            label-hint="Account Type"
+            readonly="true"
+            value="{{ $variables.accountType }}">
+          </oj-input-text>
+
+        </oj-form-layout>
+      </oj-collapsible>
+
+      <!-- Submit and Reset -->
+      <div class="oj-flex oj-sm-padding-4x oj-sm-justify-content-flex-end">
+        <div class="oj-flex-item oj-sm-12 oj-flex oj-sm-justify-content-flex-end">
+          <oj-toolbar chroming="solid">
+            <oj-button
+              label="Submit for Approval"
+              chroming="callToAction"
+              on-oj-action="[[$listeners.buttonAction2]]"
+              disabled="[[ $variables.ValidateForm !== 'valid' ]]">
+            </oj-button>
+          </oj-toolbar>
+        </div>
+      </div>
+
+    </oj-validation-group>
+
+    <!-- Attachment Dialog -->
+    <oj-dialog
+      dialog-title="Upload Attachments"
+      id="oj-dialog-receipt-attachments"
+      cancel-behavior="icon">
+
+      <div slot="body">
+        <oj-file-picker
+          selection-mode="multiple"
+          on-oj-select="[[$listeners.filePickerSelect]]">
+        </oj-file-picker>
+
+        <oj-table
+          aria-label="Uploaded Files"
+          scroll-policy="loadMoreOnScroll"
+          data="[[$variables.FileADP]]"
+          columns='[
+            {"headerText":"Name","field":"FileName"},
+            {"headerText":"Size (KB)","field":"FileSize"},
+            {"headerText":"Type","field":"FileType"}
+          ]'>
+        </oj-table>
+      </div>
+
+      <div slot="footer">
+        <oj-button
+          label="Close"
+          on-oj-action="">
+        </oj-button>
+      </div>
+    </oj-dialog>
+
+  </div>
+</oj-bind-if>
+
+<!-- APPROVE RECEIPT PANEL -->
+<oj-bind-if test="[[ $variables.ojTabBar812955251SelectedItem === 'oj-tab-bar-81295525-1-tab-2' ]]">
+  <div id="oj-tab-bar-81295525-1-tab-2-panel"
+       role="tabpanel"
+       aria-labelledby="oj-tab-bar-81295525-1-tab-2-tab">
+
+    <div class="oj-flex oj-sm-padding-4x">
+      <div class="oj-flex-item oj-sm-12">
+        <h4>Approve Receipt</h4>
+        <p>Review submitted receipts and record an approval decision.</p>
+      </div>
+    </div>
+
+    <!-- Submitted Receipts -->
+    <oj-collapsible expanded="true">
+      <h6 slot="header">Submitted Receipts</h6>
+
+      <oj-table
+        id="receiptApprovalTable"
+        aria-label="Submitted Receipts"
+        data="[[ $variables.ReceiptApprovalSDP ]]"
+        selection-mode.row="single"
+        columns='[
+          {"headerText":"Receipt Number","field":"receiptNumber"},
+          {"headerText":"Business Unit","field":"businessUnit"},
+          {"headerText":"Receipt Method","field":"receiptMethod"},
+          {"headerText":"Amount","field":"amount"},
+          {"headerText":"Currency","field":"currency"},
+          {"headerText":"Receipt Date","field":"receiptDate"},
+          {"headerText":"Status","field":"status"},
+          {"headerText":"Comment","field":"comment1"}
+        ]'
+        on-first-selected-row-changed="[[$listeners.receiptApprovalTableFirstSelectedRow]]">
+      </oj-table>
+    </oj-collapsible>
+
+    <!-- Approval Decision -->
+    <oj-collapsible expanded="true">
+      <h6 slot="header">Approval Decision</h6>
+
+      <oj-form-layout columns="1" max-columns="1">
+
+        <oj-input-text
+          label-hint="Selected Receipt Number"
+          value="{{ $variables.selectedReceiptNumber }}"
+          readonly="true">
+        </oj-input-text>
+
+        <oj-text-area
+          label-hint="Approver Comments"
+          value="{{ $variables.approverComment }}"
+          rows="3">
+        </oj-text-area>
+
+      </oj-form-layout>
+
+      <div class="oj-flex oj-sm-padding-4x oj-sm-justify-content-flex-end">
+        <oj-toolbar chroming="solid">
+
+          <oj-button
+            label="Approve"
+            chroming="callToAction"
+            on-oj-action="[[$listeners.buttonAction4]]">
+            <span slot="startIcon" class="oj-ux-ico-check"></span>
+          </oj-button>
+
+          <oj-button
+            label="Reject"
+            chroming="outlined"
+            on-oj-action="[[$listeners.buttonAction5]]">
+            <span slot="startIcon" class="oj-ux-ico-close"></span>
+          </oj-button>
+
+        </oj-toolbar>
+      </div>
+    </oj-collapsible>
+
+  </div>
+</oj-bind-if>

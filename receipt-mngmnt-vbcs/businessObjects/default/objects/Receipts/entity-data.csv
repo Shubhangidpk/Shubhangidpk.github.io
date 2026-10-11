@@ -1,0 +1,10 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,receiptNumber,amount,businessUnit,receiptMethod,currency,receiptDate,comment1,status,approverComment,bankName,branchName,accountType
+4,2026-10-11T12:37:29,2026-10-11T12:52:34,notify@oracleerpguide.com,notify@oracleerpguide.com,123,100,,,,,test,Approved,Receipt approved,IRG Ltd.,Ahamadabad,Savings
+5,2026-10-11T12:52:18,2026-10-11T12:59:04,notify@oracleerpguide.com,notify@oracleerpguide.com,233,100,,,,,test,Approved,Receipt approved,IRG Ltd.,Ahamadabad,Savings
+6,2026-10-11T12:58:16,2026-10-11T12:58:30,notify@oracleerpguide.com,notify@oracleerpguide.com,332,11,,,,,test,Approved,Receipt approved,ICSI Ltd.,Pune,Savings
+7,2026-10-11T13:00:43,2026-10-11T13:15:13,notify@oracleerpguide.com,notify@oracleerpguide.com,22,100,,,,,test,Approved,Receipt approved,IRG Ltd.,Ahamadabad,Savings
+8,2026-10-11T13:07:47,2026-10-11T14:22:44,notify@oracleerpguide.com,notify@oracleerpguide.com,,,,,,,,Rejected,Receipt rejected,,,
+9,2026-10-11T13:08:37,2026-10-11T14:22:38,notify@oracleerpguide.com,notify@oracleerpguide.com,,,,,,,,Approved,Receipt approved,,,
+10,2026-10-11T13:14:57,2026-10-11T13:14:57.008,notify@oracleerpguide.com,notify@oracleerpguide.com,222,100,,,,,test,Pending Approval,,IRG Ltd.,Ahamadabad,Savings
+11,2026-10-11T14:17:30,2026-10-11T14:17:30.033,notify@oracleerpguide.com,notify@oracleerpguide.com,234,100,,,,,test,Pending Approval,,IRG Ltd.,Ahamadabad,Savings
+12,2026-10-11T14:21:02,2026-10-11T14:21:35,notify@oracleerpguide.com,notify@oracleerpguide.com,332,100,,,,,test,Approved,Receipt approved,IRG Ltd.,Ahamadabad,Savings

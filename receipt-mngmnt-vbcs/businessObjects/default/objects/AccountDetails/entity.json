@@ -1,0 +1,87 @@
+{
+    "fields": [
+        {
+            "type": "number",
+            "name": "id",
+            "internal": false,
+            "key": true,
+            "oid": "c29607de-6b23-4373-ac44-73331b45e471",
+            "required": true,
+            "unique": true,
+            "displayLabel": "Id"
+        },
+        {
+            "type": "datetime",
+            "name": "creationDate",
+            "internal": false,
+            "oid": "fe9441f4-c159-49ec-9016-1678ddafa96a",
+            "displayLabel": "Created",
+            "historyType": "timeCreated"
+        },
+        {
+            "type": "datetime",
+            "name": "lastUpdateDate",
+            "internal": false,
+            "oid": "cb430c54-20f1-4bda-a915-055c4f8ea5f0",
+            "displayLabel": "Last Updated",
+            "historyType": "timeUpdated"
+        },
+        {
+            "type": "string",
+            "name": "createdBy",
+            "internal": false,
+            "oid": "6ee899e1-a843-4907-9029-48dd8200cac1",
+            "displayLabel": "Created By",
+            "historyType": "createdBy"
+        },
+        {
+            "type": "string",
+            "name": "lastUpdatedBy",
+            "internal": false,
+            "oid": "696c8eab-db2e-4c28-a6de-4cc5728e9fc2",
+            "displayLabel": "Last Updated By",
+            "historyType": "updatedBy"
+        },
+        {
+            "type": "number",
+            "name": "versionNumber",
+            "internal": false,
+            "oid": "4abd4311-34cf-4790-a648-a41901e679f2",
+            "displayLabel": "Version Number",
+            "historyType": "versionNumber"
+        },
+        {
+            "type": "string",
+            "name": "bankName",
+            "oid": "0f394a76-c2c2-4b66-bed6-b5580fcb2554",
+            "displayLabel": "BankName"
+        },
+        {
+            "type": "string",
+            "name": "branchName",
+            "oid": "36cd479e-d92c-4624-825f-96e152a93e2c",
+            "displayLabel": "BranchName"
+        },
+        {
+            "type": "string",
+            "name": "accountType",
+            "oid": "44b9a03a-629f-46d5-8940-5d750d91d549",
+            "displayLabel": "AccountType"
+        },
+        {
+            "type": "string",
+            "name": "accountNumber",
+            "oid": "95be1659-e2c1-43d1-aac4-fca27965cdc1",
+            "displayLabel": "AccountNumber"
+        },
+        {
+            "type": "string",
+            "name": "maskedAccntNumber",
+            "oid": "25d79649-2135-4f5e-83d2-9fc08b48bf4a",
+            "displayLabel": "MaskedAccntNumber"
+        }
+    ],
+    "name": "AccountDetails",
+    "oid": "20a4bc74-5f55-40f5-9c0d-a24f18304588",
+    "displayLabel": "Account Details"
+}
